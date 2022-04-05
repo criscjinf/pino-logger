@@ -1,0 +1,22 @@
+{
+  "name": "hospitalapi",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "tsc && node ./dist/js/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.9",
+    "pino": "^7.9.2",
+    "pino-pretty": "^7.6.0",
+    "traceback": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/traceback": "^0.3.29",
+    "pino-mongodb": "^3.1.1",
+    "typescript": "^4.6.3"
+  }
+}
