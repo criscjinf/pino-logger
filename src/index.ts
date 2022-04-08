@@ -1,19 +1,17 @@
 import dotenv from 'dotenv'
-import Logger from './log/logger'
-
 dotenv.config()
 
-function testeErro() {
-  const logger = new Logger()
-  try{
-    throw new Error(JSON.stringify({teste: 123, fap: 789}))
-  } catch (e: any) {
-    console.log(e.stack.split('\n'))
-    // logger.where('index.ts | testeErro')
-    //   .why('Erro desconhecido')
-    //   .what(e.message)
-    //   .error()
-  }
+import {logger} from './logger/logger'
+
+'use strict'
+
+const http = require('http')
+const server = http.createServer(handle)
+
+function handle (req: any, res: any) {
+  if (logger.pinoHttp) logger.pinoHttp(req, res)
+  req.log.info('something else')
+  res.end('hello world')
 }
 
-testeErro()
+server.listen(3000)

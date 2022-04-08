@@ -1,11 +1,11 @@
 import Log from "../interfaces/log-interface"
-import Logger from "../logger"
+import {ILogger} from "../logger"
 
 class BaseState {
-  public logger: Logger
+  public logger: ILogger
   public log: Log
 
-  constructor(logger: Logger) {
+  constructor(logger: ILogger) {
     this.log = logger.log
     this.logger = logger
   }

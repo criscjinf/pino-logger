@@ -1,11 +1,12 @@
 import Log from '../interfaces/log-interface'
-import Logger from '../logger'
 import BaseState from './base-state'
+import LogState from './log-state'
+
 
 class WhatState extends BaseState {
-  what(msg: string): Logger {
+  what(msg: string): LogState {
     this.log.what = msg
-    return this.logger
+    return new LogState(this.logger)
   }
 }
 
