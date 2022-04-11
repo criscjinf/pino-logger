@@ -4,7 +4,7 @@ import Log from "./interfaces/log-interface"
 import getPinoLogger from "../pino"
 import { Logger as PinoLogger } from 'pino'
 import PinoHttp, { HttpLogger } from "pino-http"
-import pino from "pino"
+import ILogger from "./interfaces/logger-interface"
 
 class Logger implements ILogger {
   public log : Log = {
@@ -47,12 +47,3 @@ class Logger implements ILogger {
 }
 
 export const logger = new Logger()
-
-export interface ILogger {
-  pinoLogger: PinoLogger,
-  pinoHttp?: HttpLogger,
-  log: Log,
-  where(msg: string): WhyState,
-  debug(msg: any): void,
-  config(targets?: any): void
-}

@@ -1,5 +1,5 @@
 import Log from "../interfaces/log-interface"
-import {ILogger} from "../logger"
+import ILogger from "../interfaces/logger-interface"
 
 class BaseState {
   public logger: ILogger
